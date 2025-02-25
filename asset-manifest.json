@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/gamified_learning/static/css/main.f855e6bc.css",
+    "main.js": "/gamified_learning/static/js/main.f29b1847.js",
+    "reactPlayerYouTube.js": "/gamified_learning/static/js/reactPlayerYouTube.9713ee9a.chunk.js",
+    "reactPlayerSoundCloud.js": "/gamified_learning/static/js/reactPlayerSoundCloud.2372bda0.chunk.js",
+    "reactPlayerVimeo.js": "/gamified_learning/static/js/reactPlayerVimeo.95ca9457.chunk.js",
+    "reactPlayerMux.js": "/gamified_learning/static/js/reactPlayerMux.2c151431.chunk.js",
+    "reactPlayerFacebook.js": "/gamified_learning/static/js/reactPlayerFacebook.00a1896b.chunk.js",
+    "reactPlayerStreamable.js": "/gamified_learning/static/js/reactPlayerStreamable.1f467983.chunk.js",
+    "reactPlayerWistia.js": "/gamified_learning/static/js/reactPlayerWistia.11f2f9a3.chunk.js",
+    "reactPlayerTwitch.js": "/gamified_learning/static/js/reactPlayerTwitch.cebf3d4e.chunk.js",
+    "reactPlayerDailyMotion.js": "/gamified_learning/static/js/reactPlayerDailyMotion.6c235cdb.chunk.js",
+    "reactPlayerMixcloud.js": "/gamified_learning/static/js/reactPlayerMixcloud.cbe0f897.chunk.js",
+    "reactPlayerVidyard.js": "/gamified_learning/static/js/reactPlayerVidyard.6ca3d988.chunk.js",
+    "reactPlayerKaltura.js": "/gamified_learning/static/js/reactPlayerKaltura.a26790a0.chunk.js",
+    "reactPlayerFilePlayer.js": "/gamified_learning/static/js/reactPlayerFilePlayer.e0952144.chunk.js",
+    "reactPlayerPreview.js": "/gamified_learning/static/js/reactPlayerPreview.474f52c1.chunk.js",
+    "static/js/488.ed3fae6b.chunk.js": "/gamified_learning/static/js/488.ed3fae6b.chunk.js",
+    "index.html": "/gamified_learning/index.html",
+    "main.f855e6bc.css.map": "/gamified_learning/static/css/main.f855e6bc.css.map",
+    "main.f29b1847.js.map": "/gamified_learning/static/js/main.f29b1847.js.map",
+    "reactPlayerYouTube.9713ee9a.chunk.js.map": "/gamified_learning/static/js/reactPlayerYouTube.9713ee9a.chunk.js.map",
+    "reactPlayerSoundCloud.2372bda0.chunk.js.map": "/gamified_learning/static/js/reactPlayerSoundCloud.2372bda0.chunk.js.map",
+    "reactPlayerVimeo.95ca9457.chunk.js.map": "/gamified_learning/static/js/reactPlayerVimeo.95ca9457.chunk.js.map",
+    "reactPlayerMux.2c151431.chunk.js.map": "/gamified_learning/static/js/reactPlayerMux.2c151431.chunk.js.map",
+    "reactPlayerFacebook.00a1896b.chunk.js.map": "/gamified_learning/static/js/reactPlayerFacebook.00a1896b.chunk.js.map",
+    "reactPlayerStreamable.1f467983.chunk.js.map": "/gamified_learning/static/js/reactPlayerStreamable.1f467983.chunk.js.map",
+    "reactPlayerWistia.11f2f9a3.chunk.js.map": "/gamified_learning/static/js/reactPlayerWistia.11f2f9a3.chunk.js.map",
+    "reactPlayerTwitch.cebf3d4e.chunk.js.map": "/gamified_learning/static/js/reactPlayerTwitch.cebf3d4e.chunk.js.map",
+    "reactPlayerDailyMotion.6c235cdb.chunk.js.map": "/gamified_learning/static/js/reactPlayerDailyMotion.6c235cdb.chunk.js.map",
+    "reactPlayerMixcloud.cbe0f897.chunk.js.map": "/gamified_learning/static/js/reactPlayerMixcloud.cbe0f897.chunk.js.map",
+    "reactPlayerVidyard.6ca3d988.chunk.js.map": "/gamified_learning/static/js/reactPlayerVidyard.6ca3d988.chunk.js.map",
+    "reactPlayerKaltura.a26790a0.chunk.js.map": "/gamified_learning/static/js/reactPlayerKaltura.a26790a0.chunk.js.map",
+    "reactPlayerFilePlayer.e0952144.chunk.js.map": "/gamified_learning/static/js/reactPlayerFilePlayer.e0952144.chunk.js.map",
+    "reactPlayerPreview.474f52c1.chunk.js.map": "/gamified_learning/static/js/reactPlayerPreview.474f52c1.chunk.js.map",
+    "488.ed3fae6b.chunk.js.map": "/gamified_learning/static/js/488.ed3fae6b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.f29b1847.js"
+  ]
+}
