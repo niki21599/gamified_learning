@@ -18,6 +18,7 @@ import { CheckCircleOutline, HighlightOffOutlined } from "@mui/icons-material";
 import TopBar from './components/TopBar.component';
 import ContentPage from './components/ContentPage.component';
 import { pagesContent } from './data/pagesContent';
+import { API_ENDPOINT } from './data/API';
 
 function App() {
 
@@ -33,7 +34,21 @@ function App() {
     if (page < (pagesContent.length -1)) {
       setPage(prev => prev + 1)
     }else{
-      window.location.href = linkToSurvey;
+      // Generieren einer vierstelligen Zufallszahl: 
+      let randomNumber = Math.floor(Math.random() * (9999 - 1000) + 1000);
+      let userName = "user" + randomNumber;
+      let userData = {name: userName, xp: xp};
+
+      fetch(API_ENDPOINT + "users", {
+        method: "POST", 
+        body: JSON.stringify(userData),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        }
+      })
+      .then(res => { 
+        window.location.href = linkToSurvey;
+      })
     }
   };
   const handleBefore = () =>{
@@ -100,7 +115,7 @@ return (
         </Typography>
       </Box>
     ) : (
-      <ContentPage page={page} onNext={handleNext} onAnswer={handleAnswer} onBefore={handleBefore}/>
+      <ContentPage page={page} onNext={handleNext} onAnswer={handleAnswer} onBefore={handleBefore} xp={xp}/>
     )}
   </Box>
 );

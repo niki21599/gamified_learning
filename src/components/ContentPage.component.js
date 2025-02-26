@@ -1,29 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
-  AppBar,
-  Toolbar,
   Typography,
   Box,
   Button,
   Container,
-  Grid,
-  LinearProgress,
   Card,
   CardContent,
-  CardActions,
-  TextField,
+  Table, 
+  TableBody, 
+  TableCell, 
+  TableContainer, 
+  TableHead, TableRow
 } from "@mui/material";
 import { CenterFocusStrong, CheckCircleOutline } from "@mui/icons-material";
 import { ContentPageType } from "../enum/contentPageType.enum";
 import { pagesContent } from "../data/pagesContent";
 import ProgressBar from "./ProgressBar.component";
 import ReactPlayer from "react-player";
+import { Star } from "@mui/icons-material";
+import { API_ENDPOINT } from "../data/API";
 
 
 
-const ContentPage = ({ page, onNext, onAnswer, onBefore }) => {
+
+const ContentPage = ({ page, onNext, onAnswer, onBefore, xp }) => {
 
     const currentPage = pagesContent[page];
+
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+      fetch(API_ENDPOINT + "users")
+      .then(res => res.json())
+      .then(data => {
+        data.push({name: "Du", xp: xp});
+      const sortedData = data.sort((a, b) => b.xp - a.xp);
+      setUsers(sortedData);
+      })
+    }, [xp])
 
     return (
         <Container>
@@ -40,7 +54,7 @@ const ContentPage = ({ page, onNext, onAnswer, onBefore }) => {
                 <ReactPlayer url={currentPage.videoUrl} controls/>
               </Box>
             </Box>
-          ) : (
+          ) : currentPage.type === ContentPageType.QUIZ ? (
             <Box>
               <Typography variant="h5" gutterBottom>
                 {currentPage.question}
@@ -76,8 +90,68 @@ const ContentPage = ({ page, onNext, onAnswer, onBefore }) => {
                 }
               
             </Box>
-          )}
-          <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 4 }}>
+          ): 
+          <div>
+            <Box>
+              <Typography variant="h4" gutterBottom>
+                Herzlichen Glückwunsch!
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                Vielen Dank für das bearbeiten meines Lernelements. Du hast durch das beantworten der Quizfragen {xp}/60 XP erreicht.
+                Durch Klick auf 'Weiter' gelangst du zu meiner Umfrage über das Lernelement. 
+                Hier siehst du die Rangliste aller Nutzer des Lernelements: 
+              </Typography>
+            </Box>
+            <TableContainer>
+                <Typography variant="h5" align="center" sx={{ p: 2 }}>
+                  🎮 Rangliste aller Nutzer
+                </Typography>
+                <Table>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell align="left">🏆 Rang</TableCell>
+                      <TableCell>Name</TableCell>
+                      <TableCell align="right"> 
+                            <Star /> 
+                        </TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {users.map((user, index) => {
+                        const ranks = new Map();
+                        let currentRank = 1;
+                        users.forEach((user, index) => {
+                          if (index === 0) {
+                            ranks.set(user.xp, currentRank);
+                          } else {
+                            const prevUser = users[index - 1];
+                            if (user.xp < prevUser.xp) {
+                              currentRank = index + 1; 
+                            }
+                            ranks.set(user.xp, currentRank);
+                          }
+                        });
+                      const rank = ranks.get(user.xp);
+
+                      return (
+                        user.name == "Du"? <TableRow sx={{ backgroundColor: "#f4f4f4"}}>
+                      <TableCell align="left" sx={{fontWeight: 'bold'}}>{rank + "."}</TableCell>
+                      <TableCell align="left" sx={{fontWeight: 'bold'}}>{user.name}</TableCell>
+                      <TableCell align="right" sx={{fontWeight: 'bold'}}>{user.xp}</TableCell>
+                    </TableRow>: 
+                      <TableRow>
+                        <TableCell align="left">{rank + "."}</TableCell>
+                        <TableCell align="left">{user.name}</TableCell>
+                        <TableCell align="right">{user.xp}</TableCell>
+                      </TableRow>
+                      )  
+                    })}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+          </div>
+          }
+          <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 4, mb: 4 }}>
             <Button variant="contained" color='secondary' onClick={onBefore} disabled={page == 0} sx={{mr: 2}}>
                 Zurück
             </Button>

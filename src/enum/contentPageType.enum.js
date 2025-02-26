@@ -1,4 +1,5 @@
 export const ContentPageType = {
     QUIZ: "quiz", 
-    VIDEOCONTENT: "video_content"
+    VIDEOCONTENT: "video_content", 
+    RANKING: "ranking"
 }

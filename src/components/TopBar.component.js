@@ -24,7 +24,7 @@ const TopBar = ({xp: xp}) =>{
                 Gamifizierte Finanzbildung
             </Typography>
             <Box sx={{ display: "flex", alignItems: "center" }}>
-                <Star sx={{ color: "#FFFF00", mr: 1 }} /> {/* Gelber Stern mit Abstand */}
+                <Star sx={{ color: "#FFFF00", mr: 1 }} /> 
                 <Typography color="#FFFF00" variant="body1" component="div">
                     {xp}
                 </Typography>
