@@ -14,13 +14,10 @@ import {
 } from "@mui/material";
 import { CenterFocusStrong, CheckCircleOutline } from "@mui/icons-material";
 import { ContentPageType } from "../enum/contentPageType.enum";
-import { pagesContent } from "../data/pagesContent";
+import { pagesContent, usersForRanking } from "../data/pagesContent";
 import ProgressBar from "./ProgressBar.component";
 import ReactPlayer from "react-player";
 import { Star } from "@mui/icons-material";
-import { API_ENDPOINT } from "../data/API";
-
-
 
 
 const ContentPage = ({ page, onNext, onAnswer, onBefore, xp }) => {
@@ -30,13 +27,16 @@ const ContentPage = ({ page, onNext, onAnswer, onBefore, xp }) => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-      fetch(API_ENDPOINT + "users")
-      .then(res => res.json())
-      .then(data => {
+      let data = usersForRanking;
+      // Da es 4 dummy Users gibt --> Können wir sicher hiervon ausgehen...
+      if(data.length == 4){
         data.push({name: "Du", xp: xp});
-      const sortedData = data.sort((a, b) => b.xp - a.xp);
-      setUsers(sortedData);
-      })
+      }else{
+        let user = data.find(x => x.name == "Du");
+        user.xp = xp;
+        const sortedData = data.sort((a, b) => b.xp - a.xp);
+        setUsers(sortedData);
+      }
     }, [xp])
 
     return (

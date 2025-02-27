@@ -101,3 +101,10 @@ export const pagesContent = [
         type: ContentPageType.RANKING
       },
   ];
+
+export const usersForRanking = [
+  {name: "Emilia", xp: 20},
+  {name: "Sofia", xp: 30},
+  {name: "Elias", xp: 40},
+  {name: "Sofia", xp: 50},
+]

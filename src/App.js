@@ -18,7 +18,6 @@ import { CheckCircleOutline, HighlightOffOutlined } from "@mui/icons-material";
 import TopBar from './components/TopBar.component';
 import ContentPage from './components/ContentPage.component';
 import { pagesContent } from './data/pagesContent';
-import { API_ENDPOINT } from './data/API';
 
 function App() {
 
@@ -33,22 +32,8 @@ function App() {
 
     if (page < (pagesContent.length -1)) {
       setPage(prev => prev + 1)
-    }else{
-      // Generieren einer vierstelligen Zufallszahl: 
-      let randomNumber = Math.floor(Math.random() * (9999 - 1000) + 1000);
-      let userName = "user" + randomNumber;
-      let userData = {name: userName, xp: xp};
-
-      fetch(API_ENDPOINT + "users", {
-        method: "POST", 
-        body: JSON.stringify(userData),
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-        }
-      })
-      .then(res => { 
+    }else{    
         window.location.href = linkToSurvey;
-      })
     }
   };
   const handleBefore = () =>{
@@ -60,14 +45,14 @@ function App() {
   const handleAnswer = (isCorrect, page) => {
      setAnswerCorrect(isCorrect);
     if (isCorrect) {
-      setXp((prev) => prev + 10); // XP für richtige Antwort
-      setAnimation(true); // Animation starten
+      setXp((prev) => prev + 10); 
+      setAnimation(true); 
       page.isAnswered = true;
       setTimeout(() => {
         setAnimation(false);
       }, 1500);
     } else {
-      setAnimation(true); // Animation starten
+      setAnimation(true);
       page.isAnswered = true;
       setTimeout(() => {
         setAnimation(false);
