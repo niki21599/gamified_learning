@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/gamified_learning/static/css/main.f855e6bc.css",
-    "main.js": "/gamified_learning/static/js/main.bbd20334.js",
+    "main.js": "/gamified_learning/static/js/main.335c00d9.js",
     "reactPlayerYouTube.js": "/gamified_learning/static/js/reactPlayerYouTube.9713ee9a.chunk.js",
     "reactPlayerSoundCloud.js": "/gamified_learning/static/js/reactPlayerSoundCloud.2372bda0.chunk.js",
     "reactPlayerVimeo.js": "/gamified_learning/static/js/reactPlayerVimeo.95ca9457.chunk.js",
@@ -19,7 +19,7 @@
     "static/js/488.ed3fae6b.chunk.js": "/gamified_learning/static/js/488.ed3fae6b.chunk.js",
     "index.html": "/gamified_learning/index.html",
     "main.f855e6bc.css.map": "/gamified_learning/static/css/main.f855e6bc.css.map",
-    "main.bbd20334.js.map": "/gamified_learning/static/js/main.bbd20334.js.map",
+    "main.335c00d9.js.map": "/gamified_learning/static/js/main.335c00d9.js.map",
     "reactPlayerYouTube.9713ee9a.chunk.js.map": "/gamified_learning/static/js/reactPlayerYouTube.9713ee9a.chunk.js.map",
     "reactPlayerSoundCloud.2372bda0.chunk.js.map": "/gamified_learning/static/js/reactPlayerSoundCloud.2372bda0.chunk.js.map",
     "reactPlayerVimeo.95ca9457.chunk.js.map": "/gamified_learning/static/js/reactPlayerVimeo.95ca9457.chunk.js.map",
@@ -38,6 +38,6 @@
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.bbd20334.js"
+    "static/js/main.335c00d9.js"
   ]
 }
